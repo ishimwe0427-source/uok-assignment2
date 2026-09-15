@@ -1,0 +1,55 @@
+Ishimwe Jean Francois — Git branch + Pull Request (UOK Cloud)
+==============================================================
+
+YOUR folders (Windows)
+  uokclass2      → C:\Users\IT FAir\Desktop\uokclass2   (Assignment 2, deploy notes)
+  uokclass-git   → C:\Users\IT FAir\Desktop\uokclass-git (Git clone for GitHub)
+  uokclass       → C:\Users\IT FAir\Desktop\uokclass     (SSH key .pem only)
+
+YOUR GitHub
+  https://github.com/ishimwe0427-source/uokclass
+
+YOUR Azure VM
+  Name: cloud-uok
+  User: azureuser
+  Public IP: 20.121.113.179
+  SSH key: "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem"
+
+--- 1) Branch + commit + push (Git Bash) ---
+
+cd "/c/Users/IT FAir/Desktop/uokclass-git"
+git checkout main
+git pull origin main
+git checkout -b feature/ishimwe-attendence
+git add attendence.html
+git commit -m "Add student Attendance functionality - Ishimwe Jean Francois"
+git push -u origin feature/ishimwe-attendence
+
+(If branch feature/students-attendence already exists from class demo, use main — attendence.html is already merged.)
+
+--- 2) Pull request (browser) ---
+
+https://github.com/ishimwe0427-source/uokclass
+Compare & pull request → base: main ← compare: feature/ishimwe-attendence
+Title: Add student Attendance functionality
+Merge pull request → Confirm merge
+
+--- 3) Deploy attendence.html to cloud-uok ---
+
+cd "/c/Users/IT FAir/Desktop/uokclass-git"
+scp -i "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem" attendence.html azureuser@20.121.113.179:/tmp/
+
+ssh -i "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem" azureuser@20.121.113.179
+sudo cp /tmp/attendence.html /var/www/html/
+exit
+
+Browser:
+  http://20.121.113.179/
+  http://20.121.113.179/attendence.html
+  http://20.121.113.179/assign2.html
+
+--- 4) What lecturer sees ---
+
+Repo root: attendence.html (after PR merge)
+Folder assignment2/: Assignment 2 + screenshots/
+Live proof: http://20.121.113.179/
