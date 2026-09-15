@@ -1,5 +1,8 @@
 # UOK — Ishimwe Jean Francois
 
+**Folders:** `uokclass2` (here) · `uokclass-git` (GitHub clone) · `uokclass` (SSH `.pem`)  
+**GitHub:** https://github.com/ishimwe0427-source/uokclass · **Git branch steps:** [UOK_GIT_BRANCH_STEPS.txt](./UOK_GIT_BRANCH_STEPS.txt)
+
 ## Assignment 2 (Linux VM + hosted homepage) — **submit this**
 
 | Item | Link |
