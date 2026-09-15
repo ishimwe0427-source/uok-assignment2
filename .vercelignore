@@ -1,0 +1,5 @@
+.git
+screenshots
+*.md
+*.txt
+.gitignore
