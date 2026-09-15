@@ -1,13 +1,13 @@
-Paste your 8 screenshots in this folder with EXACT names:
+Paste your 8 screenshots in this folder with EXACT names (no dashes):
 
-  screenshots/01-public-and-private-ip.png
-  screenshots/02-ports-azure-nsg-22-80-443.png
-  screenshots/03-ports-ufw-status.png
-  screenshots/04-disk-df-h.png
-  screenshots/05-network-ip-addr.png
-  screenshots/06-network-ip-route-and-dns.png
-  screenshots/07-website-homepage.png        ← you already have this in browser
-  screenshots/08-website-assign2.png         ← you already have this in browser
+  screenshots/01 public private ip.png
+  screenshots/02 ports azure nsg.png
+  screenshots/03 ports ufw.png
+  screenshots/04 disk dfh.png
+  screenshots/05 network ipaddr.png
+  screenshots/06 network route dns.png
+  screenshots/07 website homepage.png
+  screenshots/08 website assign2.png
 
 Then run:
 
@@ -20,8 +20,8 @@ Also copy the same PNG files to:
   C:\Users\IT FAir\Desktop\uokclass-git\assignment2\screenshots\
 
   cd "/c/Users/IT FAir/Desktop/uokclass-git"
-  git add assignment2/ README.md
-  git commit -m "Add Assignment 2 with screenshots for lecturer"
+  git add assignment2/screenshots/
+  git commit -m "Add Assignment 2 screenshots for lecturer"
   git push
 
-Lecturer repo (collaborator invite): https://github.com/ishimwe0427-source/uokclass
+Lecturer repo: https://github.com/ishimwe0427-source/uokclass/tree/main/assignment2/screenshots
