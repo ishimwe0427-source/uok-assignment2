@@ -10,7 +10,7 @@
 
 | Type | Address |
 |------|---------|
-| **Public IP** | 20.127.153.119 |
+| **Public IP** | 20.121.113.179 |
 | **Private IP** | 172.16.0.4 |
 
 **Evidence:** Azure Portal → VM **cloud-uok** → Overview (screenshot).
@@ -42,7 +42,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-**Evidence:** Screenshot of `sudo ufw status` and Azure Networking blade.
+**Evidence:** Screenshot of Azure inbound rules showing **HTTP 80, HTTPS 443, SSH 22** (Allow) + `sudo ufw status` on VM.
 
 ---
 
@@ -68,7 +68,7 @@ lsblk
 |---------|-------|
 | Virtual network | cloud-uok-vnet / default |
 | Private IP | 172.16.0.4 |
-| Public IP | 20.127.153.119 |
+| Public IP | 20.121.113.179 |
 | Region | East US |
 
 **Verify on VM:**
@@ -106,7 +106,7 @@ curl http://localhost/assign2.html
 
 From your PC browser:
 ```
-http://20.127.153.119/
+http://20.121.113.179/
 ```
 
 ---

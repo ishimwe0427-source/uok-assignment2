@@ -4,7 +4,7 @@ Student: Ishimwe Jean Francois
 
 UPDATE THESE 3 LINES IF YOUR VM IS DIFFERENT:
   VM_USER=azureuser
-  VM_IP=20.127.153.119
+  VM_IP=20.121.113.179
   SSH_KEY="/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem"
 
 If class gave you cloudstudent@another IP, change VM_USER and VM_IP.
@@ -19,13 +19,14 @@ git init
 git add .
 git commit -m "Assignment 2: Linux VM homepage and documentation"
 
-Create empty repo on GitHub (e.g. uok-assignment2-linux), then:
+Repo already on GitHub (use this URL — do NOT use YOUR_USERNAME):
 
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/uok-assignment2-linux.git
+git remote remove origin 2>/dev/null
+git remote add origin https://github.com/ishimwe0427-source/uok-assignment2.git
 git push -u origin main
 
-Send lecturer the GitHub link.
+Lecturer link: https://github.com/ishimwe0427-source/uok-assignment2
 
 
 PART B — AZURE PORTS (3 min) — if website does not open
@@ -36,14 +37,25 @@ Portal → VM cloud-uok → Networking → Add inbound rules:
   HTTPS 443  TCP
 
 
+SSH TIMEOUT? (connect to host ... port 22: Connection timed out)
+----------------------------------------------------------------
+1. Azure Portal → cloud-uok → Overview → Status must be **Running** (Start if not).
+2. On Overview, copy **Public IP address** — if it is NOT 20.121.113.179, use the new IP in ssh/scp.
+3. Networking → Network settings → confirm NSG **cloud-uok-nsg** has SSH **22 Allow** (you did this).
+4. Public IP resource → SKU **Standard** + Assignment **Static** (optional but stops IP changing).
+5. Still stuck: VM → Help → **Boot diagnostics** or **Run command** → RunShellScript:
+     sudo systemctl status ssh
+     sudo systemctl start ssh
+     sudo ufw allow 22/tcp
+
 PART C — SSH FIRST TIME (2 min)
 -------------------------------
 In Git Bash (fix key permissions once on Windows):
 
 chmod 400 "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem"
-ssh -i "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem" azureuser@20.127.153.119
+ssh -i "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem" azureuser@20.121.113.179
 
-If username fails, try: cloudstudent@20.127.153.119
+If username fails, try: cloudstudent@20.121.113.179
 
 
 PART D — NGINX ON VM (5 min) — run ON THE VM after SSH
@@ -67,7 +79,7 @@ NEW Git Bash window (stay in uokclass2 folder):
 
 cd "/c/Users/IT FAir/Desktop/uokclass2"
 
-scp -i "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem" index.html assign2.html azureuser@20.127.153.119:/tmp/
+scp -i "/c/Users/IT FAir/Desktop/uokclass/ubuntu-lemp-key.pem" index.html assign2.html azureuser@20.121.113.179:/tmp/
 
 SSH again, then on VM:
 
@@ -89,8 +101,8 @@ sudo rm -f /var/www/html/index.nginx-debian.html
 
 PART G — TEST FROM PC + SCREENSHOTS (5 min)
 -------------------------------------------
-Browser: http://20.127.153.119/
-Browser: http://20.127.153.119/assign2.html
+Browser: http://20.121.113.179/
+Browser: http://20.121.113.179/assign2.html
 
 On VM for assignment proof:
 df -h
