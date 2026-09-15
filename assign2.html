@@ -3,9 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ishimwe Jean Francois</title>
+  <title>Assignment 2 | Ishimwe Jean Francois</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #f8fafc;
+    }
+    main { flex: 1; padding: 2rem 1.5rem; }
+    .site-footer {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c4a6e 100%);
+      color: #e2e8f0;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+    }
+    .site-footer .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    .site-footer .name { font-size: 1.15rem; font-weight: 700; color: #fff; margin: 0; }
+    .site-footer .role { color: #bae6fd; margin: 0.15rem 0 1rem; }
+    .site-footer a.email {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      background: rgba(14, 165, 233, 0.25);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-  <p><b>Welcome Distributed and Cloud Computing — Ishimwe Jean Francois</b></p>
+  <main>
+    <p><b>Welcome Distributed and Cloud Computing — Ishimwe Jean Francois</b></p>
+    <p><a href="/">← Back to homepage</a></p>
+  </main>
+  <footer class="site-footer">
+    <span class="badge">Built by</span>
+    <p class="name">Ishimwe Jean Francois</p>
+    <p class="role">Senior Software Engineer</p>
+    <a class="email" href="mailto:ifjean27@gmail.com">ifjean27@gmail.com</a>
+  </footer>
 </body>
 </html>
